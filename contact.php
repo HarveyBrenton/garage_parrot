@@ -2,15 +2,21 @@
 <?php include 'header.php'; ?>
 
 
-<h2>Formulaire de contact</h2>
-<form action="submit_contact.php" method="POST">
+<div class="contact-form">
+    <h2>Formulaire de contact</h2>
+    <form action="submit_contact.php" method="POST">
         <input type="hidden" name="car_id" value="<?php echo $carId; ?>">
         
         <div class="form-group">
-            <label for="name">Nom :</label>
-            <input type="text" name="name" id="name" required>
+            <label for="first_name">Nom :</label>
+            <input type="text" name="first_name" id="first_name" required>
         </div>
 
+        <div class="form-group">
+            <label for="last_name">Prénom :</label>
+            <input type="text" name="last_name" id="last_name" required>
+        </div>
+        
         <div class="form-group">
             <label for="email">Adresse e-mail :</label>
             <input type="email" name="email" id="email" required>
@@ -28,6 +34,7 @@
 
         <button type="submit">Envoyer</button>
     </form>
+</div>
 
 
     <?php include 'footer.php'; ?>

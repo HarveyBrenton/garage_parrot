@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garage Parrot</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/jquery-ui-1.13.2/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

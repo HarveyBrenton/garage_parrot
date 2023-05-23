@@ -55,7 +55,7 @@ try {
 }
 ?>
 
-<section id="vehicules">
+<section class="vehicle-list">
   <h2>Véhicules d'occasion</h2>
   <div class="vehicles">
     <?php foreach (array_slice($vehicles, 0, 3) as $vehicle): ?>
@@ -112,6 +112,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Section d'ajout d'un avis -->
 <section class="add-review">
   <h2>Ajouter un commentaire</h2>
+  <div class="container-reviews">
   <form method="POST" action="add_review.php">
     <div class="form-group">
       <label for="rating">Note :</label>
@@ -137,6 +138,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <input type="submit" value="Ajouter mon commentaire">
     </div>
   </form>
+  </div>
 </section>
 
 

@@ -1,16 +1,23 @@
 <footer>
 <div class="footer-links">
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Véhicules d'occasion</a></li>
-      <li><a href="#">Avis clients</a></li>
-    </ul>
-  </div>
+  <h3>Liens rapides</h3>
+  <ul>
+    <li><a href="index.php">Accueil</a></li>
+    <li><a href="services.php">Services</a></li>
+    <li><a href="vehicles.php">Véhicules d'occasion</a></li>
+    <li><a href="contact.php">Contact</a></li>
+  </ul>
+</div>
 
-  
+
   <div class="footer-contact">
-    <a href="contact.php">Contact</a>
+    <h3>Contact</h3>
+    <ul>
+      <li>Une équipe à votre écoute 6/7</li>
+      <li>17 rue des Parrots, France</li>
+      <li>Tel : 0123456789</li>
+      <li>Email : parrot@mail.com</li>
+    </ul>
   </div>
 
 
@@ -59,8 +66,9 @@ $sunHours = $openingHours['sun_hours'];
 
 </footer>
 
-<script src="/assets/script.js"></script>
-<script src="/assets/jquery-3.7.0.min.js"></script>
+<script src="script.js"></script>
+<script src="/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="jquery-3.7.0.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
-</html>
+

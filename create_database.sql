@@ -62,7 +62,8 @@ CREATE TABLE services (
 
 CREATE TABLE users (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  name VARCHAR(50) NOT NULL,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
   phone VARCHAR(20) NOT NULL,
   message TEXT NOT NULL,
