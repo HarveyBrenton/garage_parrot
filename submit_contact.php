@@ -21,7 +21,8 @@ try {
 
 // Vérification des données du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars($_POST['name']);
+    $first_name = htmlspecialchars($_POST['first_name']);
+    $last_name = htmlspecialchars($_POST['last_name']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
     $message = htmlspecialchars($_POST['message']);
@@ -29,11 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validation des données
     if (!empty($name) && !empty($email) && !empty($phone) && !empty($message)) {
         // Insertion des données dans la table "users"
-        $stmt = $conn->prepare("INSERT INTO users (name, email, phone, message) VALUES (:name, :email, :phone, :message)");
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':phone', $phone);
-        $stmt->bindParam(':message', $message);
+        $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, phone, message) VALUES (:first_name, :last_name, :email, :phone, :message)");
+        $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);
+        $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
+        $stmt->bindParam(':message', $message, PDO::PARAM_STR);
 
         if ($stmt->execute()) {
             // Les données ont été enregistrées avec succès
