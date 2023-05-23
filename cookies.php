@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Génération d'un identifiant unique sécurisé
 $sessionId = bin2hex(random_bytes(16));
 
