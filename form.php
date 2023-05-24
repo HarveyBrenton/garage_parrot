@@ -1,8 +1,4 @@
-<?php include 'cookies.php'; ?>
-<?php include 'header.php'; ?>
-
-
-    <h2>Formulaire de contact</h2>
+<h2>Formulaire de contact</h2>
     <div class="contact-form">
     <form action="submit_contact.php" method="POST">
         <input type="hidden" name="car_id" value="<?php echo $carId; ?>">
@@ -35,6 +31,3 @@
         <button type="submit">Envoyer</button>
     </form>
 </div>
-
-
-    <?php include 'footer.php'; ?>

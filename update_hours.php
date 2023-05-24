@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h3>Modifier les horaires d'ouverture</h3>
 
+<div class="hour-container"></div>
 <form method="POST" action="">
     <label for="mon_hours">Lun. :</label>
     <input type="text" name="mon_hours" value="<?php echo htmlspecialchars($monHours); ?>"><br>
@@ -102,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit">Enregistrer</button>
 </form>
-
+</div>
 
 
 <!--FOOTER-->

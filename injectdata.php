@@ -255,6 +255,176 @@ foreach ($employeeData as $data) {
     
     
 
+
+    try {
+        // Sélectionner tous les véhicules
+        $stmt = $conn->prepare("SELECT * FROM vehicles");
+        $stmt->execute();
+        $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Parcourir chaque véhicule
+        foreach ($vehicles as $vehicle) {
+            $vehicleId = $vehicle['id'];
+            $vehicleTitle = $vehicle['title'];
+    
+            // Créer des équipements personnalisés pour chaque véhicule
+            $equipmentData = array();
+    
+            // Exemple : Équipements différents pour chaque véhicule
+            if ($vehicleId == 1) {
+                $equipmentData = array(
+                    array("Climatisation"),
+                    array("écran tactile avec connectivité Bluetooth"),
+                    array("Climatisation"),
+                    array("Régulateur de vitesse")
+                );
+            } elseif ($vehicleId == 2) {
+                $equipmentData = array(
+                    array("caméra de recul"),
+                    array("système d'infodivertissement"),
+                    array("climatisation manuelle"),
+                    array("volant en cuir")
+                );
+            }
+            elseif ($vehicleId == 3) {
+                $equipmentData = array(
+                    array("intérieur en cuir avec sièges sport"),
+                    array("système de son surround haut de gamme"),
+                    array("système de suspension adaptative"),
+                    array("système de démarrage sans clé")
+                );
+            }
+            elseif ($vehicleId == 4) {
+                $equipmentData = array(
+                    array("système audio avec connectivité USB"),
+                    array("climatisation manuelle"),
+                    array("rétroviseurs électriques"),
+                    array("système de freinage d'urgence")
+                );
+            }
+            elseif ($vehicleId == 5) {
+                $equipmentData = array(
+                    array("climatisation manuelle"),
+                    array("système de freinage d'urgence"),
+                    array("système de suspension adaptative"),
+                    array("volant en cuir")
+                );
+            }
+            elseif ($vehicleId == 6) {
+                $equipmentData = array(
+                    array("GPS"),
+                    array("Climatisation"),
+                    array("Caméra de recul"),
+                    array("Sièges chauffants")
+                );
+            }
+            
+    
+            foreach ($equipmentData as $data) {
+                $equipmentName = $data[0];
+    
+                // Insérer l'équipement dans la table vehicle_equipment
+                $stmt = $conn->prepare("INSERT INTO vehicle_equipment (vehicle_id, equipment_name) VALUES (:vehicleId, :equipmentName)");
+                $stmt->bindParam(':vehicleId', $vehicleId, PDO::PARAM_INT);
+                $stmt->bindParam(':equipmentName', $equipmentName, PDO::PARAM_STR);
+                $stmt->execute();
+    
+                echo "L'équipement '$equipmentName' a été ajouté au véhicule '$vehicleTitle' avec succès." . PHP_EOL;
+            }
+        }
+    } catch (PDOException $e) {
+        // Enregistrement de l'erreur dans un fichier de log
+        $errorLog = 'Erreur lors de l\'exécution de la requête ou de la création des équipements : ' . $e->getMessage() . PHP_EOL;
+        error_log($errorLog, 3, 'erreurs.log');
+    }
+    
+    
+
+
+    try {
+        // Sélectionner tous les véhicules
+        $stmt = $conn->prepare("SELECT * FROM vehicles");
+        $stmt->execute();
+        $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Parcourir chaque véhicule
+        foreach ($vehicles as $vehicle) {
+            $vehicleId = $vehicle['id'];
+            $vehicleTitle = $vehicle['title'];
+    
+            // Créer des caractéristiques personnalisées pour chaque véhicule
+            $featureData = array();
+    
+            // caractéristiques différentes pour chaque véhicule
+            if ($vehicleId == 1) {
+                $featureData = array(
+                    array("Moteur","moteur essence 1.2L PureTech de 130 chevaux"),
+                    array("Consommation","consommation moyenne de carburant de 5,2 L/100 km"),
+                    array("Capacité","capacité du coffre de 420 litres"),
+                    array("Direction","système de freinage ABS")
+                );
+            } elseif ($vehicleId == 2) {
+                $featureData = array(
+                    array("Moteur","moteur essence 1.2L PureTech de 82 chevaux"),
+                    array("Consommation","consommation moyenne de carburant de 4,7 L/100 km"),
+                    array("Capacité","capacité du coffre de 300 litres"),
+                    array("Direction","système de sécurité ESP")
+                );
+            }
+            elseif ($vehicleId == 3) {
+                $featureData = array(
+                    array("Moteur","moteur V8 biturbo de 4,0 litres développant 503 chevaux"),
+                    array("Consommation","accélération de 0 à 100 km/h en 3,8 secondes"),
+                    array("Capacité","transmission automatique à 7 rapports"),
+                    array("Direction","jantes en alliage léger")
+                );
+            }
+            elseif ($vehicleId == 4) {
+                $featureData = array(
+                    array("Moteur","moteur essence 1.2L TCe de 75 chevaux"),
+                    array("Consommation","consommation moyenne de carburant de 5,5 L/100 km"),
+                    array("Capacité","capacité du coffre de 288 litres"),
+                    array("Direction","direction assistée électrique")
+                );
+            }
+            elseif ($vehicleId == 5) {
+                $featureData = array(
+                    array("Moteur","moteur essence 1.2L TCe de 75 chevaux"),
+                    array("Consommation","consommation moyenne de carburant de 5,5 L/100 km"),
+                    array("Capacité","capacité du coffre de 288 litres"),
+                    array("Direction","direction assistée électrique")
+                );
+            }
+            elseif ($vehicleId == 6) {
+                $featureData = array(
+                    array("Moteur","moteur essence 1.2L TCe de 75 chevaux"),
+                    array("Consommation","consommation moyenne de carburant de 5,5 L/100 km"),
+                    array("Capacité","capacité du coffre de 288 litres"),
+                    array("Direction","direction assistée électrique")
+                );
+            }
+            
+    
+            foreach ($featureData as $data) {
+                $featureName = $data[0];
+                $featureValue = $data[1];
+    
+                // Insérer la caractéristique dans la table vehicle_feature
+                $stmt = $conn->prepare("INSERT INTO vehicle_features (vehicle_id, feature_name, feature_value) VALUES (:vehicleId, :featureName, :featureValue)");
+                $stmt->bindParam(':vehicleId', $vehicleId, PDO::PARAM_INT);
+                $stmt->bindParam(':featureName', $featureName, PDO::PARAM_STR);
+                $stmt->bindParam(':featureValue', $featureValue, PDO::PARAM_STR);
+                $stmt->execute();
+    
+                echo "La caractéristique '$featureName' a été ajoutée au véhicule '$vehicleTitle' avec succès." . PHP_EOL;
+            }
+        }
+    } catch (PDOException $e) {
+        // Enregistrement de l'erreur dans un fichier de log
+        $errorLog = 'Erreur lors de l\'exécution de la requête ou de la création des caractéristiques : ' . $e->getMessage() . PHP_EOL;
+        error_log($errorLog, 3, 'erreurs.log');
+    }
+    
     
 
 

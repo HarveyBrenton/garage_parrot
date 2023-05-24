@@ -41,6 +41,7 @@ CREATE TABLE Reviews (
   approved BOOLEAN DEFAULT 0
 );
 
+-- Table horaires
 CREATE TABLE opening_hours (
   id INT(11) NOT NULL AUTO_INCREMENT,
   mon_hours VARCHAR(255) DEFAULT NULL,
@@ -53,6 +54,8 @@ CREATE TABLE opening_hours (
   PRIMARY KEY (id)
 );
 
+
+-- Table services
 CREATE TABLE services (
   id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255) NOT NULL,
@@ -69,4 +72,22 @@ CREATE TABLE users (
   message TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Table caractéristiques vehicle
+CREATE TABLE vehicle_features (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  vehicle_id INT,
+  feature_name VARCHAR(255),
+  feature_value VARCHAR(255),
+  FOREIGN KEY (vehicle_id) REFERENCES vehicles (id)
+);
+
+-- Table vehicle équipements
+CREATE TABLE vehicle_equipment (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  vehicle_id INT,
+  equipment_name VARCHAR(255),
+  FOREIGN KEY (vehicle_id) REFERENCES vehicles (id)
+);
+
 
