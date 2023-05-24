@@ -51,12 +51,6 @@ try {
 //Récupérer le nom du modèle de voiture
 $carModel = $carTitle;
 
-//récupérer les coordonnées du concessionnaire associé à la voiture
-$dealerName = "Concessionnaire XYZ";
-$dealerEmail = "contact@concessionnaire.com";
-$dealerPhone = "0123456789";
-
-// Autres opérations ou récupérations de données en fonction de l'ID de la voiture
 
 ?>
 
@@ -65,15 +59,15 @@ $dealerPhone = "0123456789";
     <main>
         <section>
             <div class="contact-details-title">
-            <h1>Contactez-nous à propos de la voiture : <?php echo $carModel; ?></h1>
+            <h1><?php echo $carModel; ?></h1>
             <p>Vous pouvez nous contacter pour toute question ou demande d'informations concernant cette voiture.</p>
             </div>
 
             <div class="contact-details">
-                <h2>Coordonnées du concessionnaire :</h2>
-                <p>Nom du concessionnaire : <?php echo $dealerName; ?></p>
-                <p>Email : <?php echo $dealerEmail; ?></p>
-                <p>Téléphone : <?php echo $dealerPhone; ?></p>
+                <h2>Coordonnées du garage :</h2>
+                <p>17 rue des Parrots, France<br>
+                    Tel : 0123456789<br>
+                    Email : parrot@mail.com</p>
             </div>
 
 

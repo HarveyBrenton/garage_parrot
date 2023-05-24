@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = htmlspecialchars($_POST['comment']);
     $rating = intval($_POST['rating']);
 
-    // Valider les données (effectuer d'autres validations si nécessaire)
+    // Valider les données
 
     // Insérer le témoignage dans la base de données
     $servername = "localhost";
