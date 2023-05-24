@@ -33,7 +33,7 @@ if (!isset($_SESSION['admin_token'])) {
 
 
     <!--FORMULAIRE HORAIRES-->
-    <div>
+    <div class="update_hours-container">
         <h3>Modifier les horaires d'ouverture</h3>
         <a href="update_hours.php">Modifier les horaires</a>
     </div>

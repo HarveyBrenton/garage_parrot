@@ -40,6 +40,36 @@ try {
     header('Location: vehicles.php');
 }
 
+
+try {
+    // Préparer et exécuter la requête SQL pour récupérer les équipements du véhicule
+    $stmt = $conn->prepare("SELECT equipment_name FROM vehicle_equipment WHERE vehicle_id = :vehicleId");
+    $stmt->bindParam(':vehicleId', $vehicleId, PDO::PARAM_INT);
+    $stmt->execute();
+    $equipment = $stmt->fetchAll(PDO::FETCH_COLUMN);
+} catch (PDOException $e) {
+    // Enregistrement de l'erreur dans un fichier de log ou affichage d'un message d'erreur approprié
+    error_log('Erreur lors de la récupération des équipements du véhicule : ' . $e->getMessage());
+    // Gérer l'erreur d'une manière appropriée (par exemple, afficher un message d'erreur)
+}
+
+try {
+    // Préparer et exécuter la requête SQL pour récupérer les caractéristiques du véhicule
+    $stmt = $conn->prepare("SELECT feature_name, feature_value FROM vehicle_features WHERE vehicle_id = :vehicleId");
+    $stmt->bindParam(':vehicleId', $vehicleId, PDO::PARAM_INT);
+    $stmt->execute();
+    $features = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    // Enregistrement de l'erreur dans un fichier de log ou affichage d'un message d'erreur approprié
+    error_log('Erreur lors de la récupération des caractéristiques du véhicule : ' . $e->getMessage());
+    // Gérer l'erreur d'une manière appropriée (par exemple, afficher un message d'erreur)
+}
+
+
+
+
+
+
 // Fermer la connexion à la base de données
 $conn = null;
 ?>
@@ -58,6 +88,34 @@ $conn = null;
     <a href="contactId.php?id=<?php echo $vehicleId; ?>" class="btn-formulaire">Formulaire de contact</a>
     </div>
 
+    <h2>Équipements</h2>
+    <div class="ul-container">
+<ul>
+    <?php foreach ($equipment as $item) : ?>
+        <li><?php echo $item; ?></li>
+    <?php endforeach; ?>
+</ul>
+</div>
 
+<h2>Caractéristiques</h2>
+<div class="table-container">
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Valeur</th>
+    </tr>
+    <?php foreach ($features as $feature) : ?>
+        <tr>
+            <td><?php echo $feature['feature_name']; ?></td>
+            <td><?php echo $feature['feature_value']; ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+</div>
+
+           
+
+
+    <?php include 'form.php'; ?>
 
     <?php include 'footer.php'; ?>

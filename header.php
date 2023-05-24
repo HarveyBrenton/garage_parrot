@@ -19,7 +19,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="assets\img\logo-garage.png" alt="Garage V. Parrot Logo">
+      <a href="index.php"><img src="assets\img\logo-garage.png" alt="Garage V. Parrot Logo"></a>
     </div>
     <nav>
       <ul>

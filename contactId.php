@@ -71,7 +71,7 @@ $carModel = $carTitle;
             </div>
 
 
-    <!-- Code HTML du formulaire de contact -->
+    <!-- Formulaire de contact -->
     
     <h2>Formulaire de contact</h2>
     <div class="contact-form">
@@ -109,7 +109,6 @@ $carModel = $carTitle;
 
         </section>
     </main>
-
 
 
 <!--AJOUT DU FOOTER-->

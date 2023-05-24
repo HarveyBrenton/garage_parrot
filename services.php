@@ -8,7 +8,7 @@
     <section class="service-page">
       
       <div class="left-side">
-        <img src="assets/img/reparation-carosserie.jpeg" alt="Réparation carrosserie">
+        <img src="assets/img/reparation-carosserie.jpeg" alt="Réparation carrosserie" loading="lazy">
       </div>
       <div class="right-side">
         <h2>Réparation carrosserie</h2>
@@ -18,7 +18,7 @@
 
     <section class="service-page">
       <div class="left-side">
-        <img src="assets/img/reparation-mecanique.jpeg" alt="Réparation mécanique">
+        <img src="assets/img/reparation-mecanique.jpeg" alt="Réparation mécanique" loading="lazy">
       </div>
       <div class="right-side">
         <h2>Réparation mécanique</h2>
@@ -28,7 +28,7 @@
 
     <section class="service-page">
       <div class="left-side">
-        <img src="assets/img/entretien-regulier.jpeg" alt="Entretien régulier">
+        <img src="assets/img/entretien-regulier.jpeg" alt="Entretien régulier" loading="lazy">
       </div>
       <div class="right-side">
         <h2>Entretien régulier</h2>

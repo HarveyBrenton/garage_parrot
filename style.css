@@ -267,7 +267,8 @@ nav ul li a {
 }
 
 .slick-carousel {
-  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .review {
@@ -300,7 +301,7 @@ nav ul li a {
 
 .container-reviews form {
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: #f2f2f2;
   border-radius: 0.2rem;
 }
 
@@ -381,34 +382,70 @@ nav ul li a {
 
 
   
-  /* Section des horaires d'ouverture */
-  #horaires {
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-  }
+
   
   /* Section de contact */
-  #contact {
-    padding: 50px;
-    text-align: center;
+  .contact-form {
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.contact-form .form-group {
+  display: grid;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #d94350;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #d94350;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form {
+    max-width: 100%;
+    padding: 1rem;
   }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .contact-form button {
-    background-color: #d92332;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+}
+
   
 
   
@@ -461,7 +498,7 @@ input[type="submit"] {
 
 /* CSS pour le carrousel */
 .review {
-  background-color: #f5f5f5;
+  background-color: #f2f2f2;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -541,7 +578,7 @@ input[type="submit"] {
   padding-right: 2rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
   margin-bottom: 2rem;
   margin-top: 0rem;
 }
@@ -659,3 +696,102 @@ input[type="submit"] {
   border-radius: 0.2rem;
 }
 
+
+
+
+.table-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 600px) {
+  table,
+  table tr,
+  table th,
+  table td {
+    display: block;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+
+  table td {
+    border-bottom: none;
+  }
+
+  table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 50%;
+    margin-left: 5px;
+  }
+}
+
+
+.ul-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ul-container ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ul-container li {
+  width: 45%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  .ul-container li {
+    width: 100%;
+  }
+}
+
+
+.hour-container {
+  margin-bottom: 1.5rem;
+}
+
+.update_hours-container {
+  margin-bottom: 1.5rem;
+}

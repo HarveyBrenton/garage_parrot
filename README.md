@@ -9,15 +9,21 @@ pour le back-office de l’application web
 
 Ce projet consiste à créer une application web vitrine pour le Garage V. Parrot, mettant en avant la qualité des services proposés par cette entreprise.
 
-## Prérequis
+## Technologies utilisées
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre système :
+Serveur :
+● Version PHP 8.2
+● Extension PHP : PDO
+● MariaDB (version 10.11)
 
-- PHP (avec l'extension PDO)
-- MariaDB (version 10.11)
-- HTML5
-- CSS3
-- MySQL
+Pour le front :
+● HTML 5
+● CSS 3
+● JavaScript
+
+pour le back :
+● PHP 8.2 sous PDO
+● MySQL
 
 ## Installation
 
@@ -28,9 +34,18 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 ## Fonctionnalités
 # US1. Se connecter
+'create_database.sql' : contient la base de données + tables.
+'injectdata.php' : contient l'alimentation de la base de données.
+
+La création de l'administrateur a été crée à partir du fichier 'injectdata.php' (comme pour pour toutes les autres créations fictives pour alimenter la database).
+
 L'administrateur dispose d'un compte préalablement créé :
 email : vincent.parrot@example.com
 mot de passe : admin
+
+Vous pouvez également vous connecter en tant qu'employé :
+email : john.doe@example.com
+mot de passe : employe_1
 
 Seul l'administrateur peut générer un compte pour les employés :
 Il dispose d'un tableau de bord Admin avec 3 options : créer un compte employé,
